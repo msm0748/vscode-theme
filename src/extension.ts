@@ -14,6 +14,21 @@ interface CustomizationOption {
   description: string;
 }
 
+interface ThemeInfo {
+  label: string;
+  configKey: string;
+  type: "light" | "dark";
+  defaultForeground: string;
+}
+
+const THEMES: ThemeInfo[] = [
+  { label: "Ivory Light", configKey: "ivory", type: "light", defaultForeground: "#3C3C3C" },
+  { label: "Material HC Dark", configKey: "materialHC", type: "dark", defaultForeground: "#EEFFFF" },
+  { label: "Material Default High Contrast", configKey: "materialDefaultHC", type: "dark", defaultForeground: "#EEFFFF" },
+  { label: "Sky Light", configKey: "skyLight", type: "light", defaultForeground: "#2C3E50" },
+  { label: "Pink Blossom", configKey: "pinkBlossom", type: "light", defaultForeground: "#3C2A33" },
+];
+
 const CUSTOMIZATION_OPTIONS: CustomizationOption[] = [
   {
     key: "accentColor",
@@ -42,67 +57,58 @@ const CUSTOMIZATION_OPTIONS: CustomizationOption[] = [
   },
 ];
 
-function getActiveThemeKey(): "ivory" | "materialHC" | null {
+function getActiveTheme(): ThemeInfo | null {
   const activeThemeId = vscode.workspace
     .getConfiguration("workbench")
     .get<string>("colorTheme");
-  if (activeThemeId === "Ivory Light") return "ivory";
-  if (activeThemeId === "Material HC Dark") return "materialHC";
-  return null;
+  return THEMES.find((t) => t.label === activeThemeId) ?? null;
 }
 
-function getConfig(themeKey: "ivory" | "materialHC"): ThemeCustomization {
+function getConfig(theme: ThemeInfo): ThemeCustomization {
   const config = vscode.workspace.getConfiguration("vellumTheme");
   return {
-    accentColor: config.get(`${themeKey}.accentColor`) as string,
-    backgroundColor: config.get(`${themeKey}.backgroundColor`) as string,
-    keywordColor: config.get(`${themeKey}.keywordColor`) as string,
-    stringColor: config.get(`${themeKey}.stringColor`) as string,
-    functionColor: config.get(`${themeKey}.functionColor`) as string,
+    accentColor: config.get(`${theme.configKey}.accentColor`) as string,
+    backgroundColor: config.get(`${theme.configKey}.backgroundColor`) as string,
+    keywordColor: config.get(`${theme.configKey}.keywordColor`) as string,
+    stringColor: config.get(`${theme.configKey}.stringColor`) as string,
+    functionColor: config.get(`${theme.configKey}.functionColor`) as string,
   };
 }
 
 function buildColorCustomizations(
-  themeKey: "ivory" | "materialHC",
+  theme: ThemeInfo,
   customization: ThemeCustomization
 ): Record<string, Record<string, string>> {
-  const themeLabel =
-    themeKey === "ivory" ? "Ivory Light" : "Material HC Dark";
   const bg = customization.backgroundColor;
+  const isLight = theme.type === "light";
 
   const colorCustomizations: Record<string, string> = {
     "statusBar.background": customization.accentColor,
-    "statusBar.foreground": themeKey === "ivory" ? "#FFFFFF" : "#000000",
+    "statusBar.foreground": isLight ? "#FFFFFF" : "#000000",
     "activityBarBadge.background": customization.accentColor,
     "editorLink.activeForeground": customization.accentColor,
     "button.background": customization.accentColor,
     "progressBar.background": customization.accentColor,
     "editor.background": bg,
-    "editor.foreground":
-      themeKey === "ivory" ? "#3C3C3C" : "#EEFFFF",
-    "sideBar.background":
-      themeKey === "ivory"
-        ? adjustBrightness(bg, -10)
-        : adjustBrightness(bg, 5),
-    "editorGroupHeader.tabsBackground":
-      themeKey === "ivory"
-        ? adjustBrightness(bg, -5)
-        : adjustBrightness(bg, 3),
+    "editor.foreground": theme.defaultForeground,
+    "sideBar.background": isLight
+      ? adjustBrightness(bg, -10)
+      : adjustBrightness(bg, 5),
+    "editorGroupHeader.tabsBackground": isLight
+      ? adjustBrightness(bg, -5)
+      : adjustBrightness(bg, 3),
     "tab.activeBackground": bg,
   };
 
-  return { [`[${themeLabel}]`]: colorCustomizations };
+  return { [`[${theme.label}]`]: colorCustomizations };
 }
 
 function buildTokenColorCustomizations(
-  themeKey: "ivory" | "materialHC",
+  theme: ThemeInfo,
   customization: ThemeCustomization
 ): Record<string, unknown> {
-  const themeLabel =
-    themeKey === "ivory" ? "Ivory Light" : "Material HC Dark";
-
   return {
-    [`[${themeLabel}]`]: {
+    [`[${theme.label}]`]: {
       textMateRules: [
         {
           scope: [
@@ -148,24 +154,17 @@ function isValidHex(value: string): boolean {
   return /^#[0-9A-Fa-f]{6}$/.test(value);
 }
 
-async function applyCustomizations(
-  themeKey: "ivory" | "materialHC"
-): Promise<void> {
-  const customization = getConfig(themeKey);
-  const colorCustomizations = buildColorCustomizations(
-    themeKey,
-    customization
-  );
+async function applyCustomizations(theme: ThemeInfo): Promise<void> {
+  const customization = getConfig(theme);
+  const colorCustomizations = buildColorCustomizations(theme, customization);
   const tokenColorCustomizations = buildTokenColorCustomizations(
-    themeKey,
+    theme,
     customization
   );
 
   const config = vscode.workspace.getConfiguration("workbench");
   const existing =
     config.get<Record<string, unknown>>("colorCustomizations") ?? {};
-  const themeLabel =
-    themeKey === "ivory" ? "[Ivory Light]" : "[Material HC Dark]";
 
   await config.update(
     "colorCustomizations",
@@ -184,102 +183,93 @@ async function applyCustomizations(
   );
 
   vscode.window.showInformationMessage(
-    `Theme customizations applied for ${themeLabel.replace(/\[|\]/g, "")}`
+    `Theme customizations applied for ${theme.label}`
   );
 }
 
 export function activate(context: vscode.ExtensionContext): void {
-  // Auto-apply on activation if theme is active
-  const themeKey = getActiveThemeKey();
-  if (themeKey) {
-    applyCustomizations(themeKey);
+  const activeTheme = getActiveTheme();
+  if (activeTheme) {
+    applyCustomizations(activeTheme);
   }
 
-  // Re-apply when theme changes
   context.subscriptions.push(
-    vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
-      if (e.affectsConfiguration("workbench.colorTheme")) {
-        const key = getActiveThemeKey();
-        if (key) applyCustomizations(key);
-      }
-    })
-  );
-
-  // Re-apply when config changes
-  context.subscriptions.push(
-    vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
-      if (
-        e.affectsConfiguration("workbench.colorTheme") ||
-        e.affectsConfiguration("vellumTheme")
-      ) {
-        const key = getActiveThemeKey();
-        if (key) applyCustomizations(key);
-      }
-    })
-  );
-
-  // Customize command
-  context.subscriptions.push(
-    vscode.commands.registerCommand(
-      "vellumTheme.customize",
-      async () => {
-        const themeKey = getActiveThemeKey();
-
-        if (!themeKey) {
-          vscode.window.showWarningMessage(
-            'Please activate "Ivory Light" or "Material HC Dark" theme first.'
-          );
-          return;
+    vscode.workspace.onDidChangeConfiguration(
+      (e: vscode.ConfigurationChangeEvent) => {
+        if (
+          e.affectsConfiguration("workbench.colorTheme") ||
+          e.affectsConfiguration("vellumTheme")
+        ) {
+          const theme = getActiveTheme();
+          if (theme) applyCustomizations(theme);
         }
-
-        const themeLabel = themeKey === "ivory" ? "Ivory Light" : "Material HC Dark";
-        const currentConfig = getConfig(themeKey);
-
-        const picked = await vscode.window.showQuickPick(
-          CUSTOMIZATION_OPTIONS.map((opt) => ({
-            label: opt.label,
-            description: opt.description,
-            detail: `Current: ${currentConfig[opt.key] as string}`,
-            key: opt.key,
-          })),
-          {
-            placeHolder: `Customize ${themeLabel} — pick a color to change`,
-          }
-        );
-
-        if (!picked) return;
-
-        const currentValue = currentConfig[picked.key];
-        const newValue = await vscode.window.showInputBox({
-          prompt: `Enter hex color for "${picked.label.replace(/\$\(.*?\)\s*/, "")}"`,
-          value: currentValue,
-          validateInput: (val: string) =>
-            isValidHex(val) ? null : "Must be a valid hex color (e.g. #FF5370)",
-          placeHolder: "#RRGGBB",
-        });
-
-        if (!newValue || !isValidHex(newValue)) return;
-
-        const config = vscode.workspace.getConfiguration("vellumTheme");
-        await config.update(
-          `${themeKey}.${picked.key}`,
-          newValue,
-          vscode.ConfigurationTarget.Global
-        );
       }
     )
   );
 
-  // Reset command
+  context.subscriptions.push(
+    vscode.commands.registerCommand("vellumTheme.customize", async () => {
+      const theme = getActiveTheme();
+
+      if (!theme) {
+        const themeNames = THEMES.map((t) => `"${t.label}"`).join(", ");
+        vscode.window.showWarningMessage(
+          `Please activate one of the Vellum themes first: ${themeNames}`
+        );
+        return;
+      }
+
+      const currentConfig = getConfig(theme);
+
+      const picked = await vscode.window.showQuickPick(
+        CUSTOMIZATION_OPTIONS.map((opt) => ({
+          label: opt.label,
+          description: opt.description,
+          detail: `Current: ${currentConfig[opt.key] as string}`,
+          key: opt.key,
+        })),
+        {
+          placeHolder: `Customize ${theme.label} — pick a color to change`,
+        }
+      );
+
+      if (!picked) return;
+
+      const currentValue = currentConfig[picked.key];
+      const newValue = await vscode.window.showInputBox({
+        prompt: `Enter hex color for "${picked.label.replace(/\$\(.*?\)\s*/, "")}"`,
+        value: currentValue,
+        validateInput: (val: string) =>
+          isValidHex(val) ? null : "Must be a valid hex color (e.g. #FF5370)",
+        placeHolder: "#RRGGBB",
+      });
+
+      if (!newValue || !isValidHex(newValue)) return;
+
+      const config = vscode.workspace.getConfiguration("vellumTheme");
+      await config.update(
+        `${theme.configKey}.${picked.key}`,
+        newValue,
+        vscode.ConfigurationTarget.Global
+      );
+    })
+  );
+
   context.subscriptions.push(
     vscode.commands.registerCommand(
       "vellumTheme.resetCustomizations",
       async () => {
-        const themeKey = getActiveThemeKey();
-        const themeLabel = themeKey === "ivory" ? "Ivory Light" : "Material HC Dark";
+        const theme = getActiveTheme();
+
+        if (!theme) {
+          vscode.window.showWarningMessage(
+            "Please activate a Vellum theme first."
+          );
+          return;
+        }
 
         const confirm = await vscode.window.showWarningMessage(
-          `Reset all ${themeLabel} customizations to defaults?`,
+          `Reset all ${theme.label} customizations to defaults?`,
           { modal: true },
           "Reset"
         );
@@ -297,19 +287,16 @@ export function activate(context: vscode.ExtensionContext): void {
 
         for (const key of keys) {
           await config.update(
-            `${themeKey ?? "ivory"}.${key}`,
+            `${theme.configKey}.${key}`,
             undefined,
             vscode.ConfigurationTarget.Global
           );
         }
 
-        // Clear workbench/editor overrides for this theme
         const wbConfig = vscode.workspace.getConfiguration("workbench");
         const colorCust =
           wbConfig.get<Record<string, unknown>>("colorCustomizations") ?? {};
-        const label =
-          themeKey === "ivory" ? "[Ivory Light]" : "[Material HC Dark]";
-        delete colorCust[label];
+        delete colorCust[`[${theme.label}]`];
         await wbConfig.update(
           "colorCustomizations",
           colorCust,
@@ -317,7 +304,7 @@ export function activate(context: vscode.ExtensionContext): void {
         );
 
         vscode.window.showInformationMessage(
-          `${themeLabel} customizations reset to defaults.`
+          `${theme.label} customizations reset to defaults.`
         );
       }
     )

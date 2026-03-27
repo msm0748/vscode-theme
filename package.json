@@ -43,6 +43,16 @@
         "label": "Material Default High Contrast",
         "uiTheme": "vs-dark",
         "path": "./themes/material-default-hc-color-theme.json"
+      },
+      {
+        "label": "Sky Light",
+        "uiTheme": "vs",
+        "path": "./themes/sky-light-color-theme.json"
+      },
+      {
+        "label": "Pink Blossom",
+        "uiTheme": "vs",
+        "path": "./themes/pink-blossom-color-theme.json"
       }
     ],
     "commands": [
@@ -116,6 +126,96 @@
           "type": "string",
           "default": "#82AAFF",
           "description": "Function/method color for Material HC Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialDefaultHC.accentColor": {
+          "type": "string",
+          "default": "#82AAFF",
+          "description": "Accent color for Material Default High Contrast theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialDefaultHC.backgroundColor": {
+          "type": "string",
+          "default": "#000000",
+          "description": "Editor background color for Material Default High Contrast theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialDefaultHC.keywordColor": {
+          "type": "string",
+          "default": "#C792EA",
+          "description": "Keyword color for Material Default High Contrast theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialDefaultHC.stringColor": {
+          "type": "string",
+          "default": "#C3E88D",
+          "description": "String color for Material Default High Contrast theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialDefaultHC.functionColor": {
+          "type": "string",
+          "default": "#82AAFF",
+          "description": "Function/method color for Material Default High Contrast theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.skyLight.accentColor": {
+          "type": "string",
+          "default": "#4A90D9",
+          "description": "Accent color for Sky Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.skyLight.backgroundColor": {
+          "type": "string",
+          "default": "#F5F9FD",
+          "description": "Editor background color for Sky Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.skyLight.keywordColor": {
+          "type": "string",
+          "default": "#1565C0",
+          "description": "Keyword color for Sky Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.skyLight.stringColor": {
+          "type": "string",
+          "default": "#2E7D32",
+          "description": "String color for Sky Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.skyLight.functionColor": {
+          "type": "string",
+          "default": "#6A1B9A",
+          "description": "Function/method color for Sky Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.pinkBlossom.accentColor": {
+          "type": "string",
+          "default": "#D4618C",
+          "description": "Accent color for Pink Blossom theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.pinkBlossom.backgroundColor": {
+          "type": "string",
+          "default": "#FDF5F7",
+          "description": "Editor background color for Pink Blossom theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.pinkBlossom.keywordColor": {
+          "type": "string",
+          "default": "#AD1457",
+          "description": "Keyword color for Pink Blossom theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.pinkBlossom.stringColor": {
+          "type": "string",
+          "default": "#2E7D32",
+          "description": "String color for Pink Blossom theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.pinkBlossom.functionColor": {
+          "type": "string",
+          "default": "#4527A0",
+          "description": "Function/method color for Pink Blossom theme",
           "pattern": "^#[0-9A-Fa-f]{6}$"
         }
       }
