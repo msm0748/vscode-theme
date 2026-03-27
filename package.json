@@ -35,11 +35,6 @@
         "path": "./themes/ivory-light-color-theme.json"
       },
       {
-        "label": "Material HC Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/material-hc-dark-color-theme.json"
-      },
-      {
         "label": "Material Default High Contrast",
         "uiTheme": "vs-dark",
         "path": "./themes/material-default-hc-color-theme.json"
@@ -53,6 +48,26 @@
         "label": "Pink Blossom",
         "uiTheme": "vs",
         "path": "./themes/pink-blossom-color-theme.json"
+      },
+      {
+        "label": "Nord",
+        "uiTheme": "vs-dark",
+        "path": "./themes/nord-color-theme.json"
+      },
+      {
+        "label": "One Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/one-dark-color-theme.json"
+      },
+      {
+        "label": "Dracula",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dracula-color-theme.json"
+      },
+      {
+        "label": "Monokai",
+        "uiTheme": "vs-dark",
+        "path": "./themes/monokai-color-theme.json"
       }
     ],
     "commands": [
@@ -96,36 +111,6 @@
           "type": "string",
           "default": "#1A5276",
           "description": "Function/method color for Ivory Light theme",
-          "pattern": "^#[0-9A-Fa-f]{6}$"
-        },
-        "vellumTheme.materialHC.accentColor": {
-          "type": "string",
-          "default": "#82AAFF",
-          "description": "Accent color for Material HC Dark theme",
-          "pattern": "^#[0-9A-Fa-f]{6}$"
-        },
-        "vellumTheme.materialHC.backgroundColor": {
-          "type": "string",
-          "default": "#000000",
-          "description": "Editor background color for Material HC Dark theme",
-          "pattern": "^#[0-9A-Fa-f]{6}$"
-        },
-        "vellumTheme.materialHC.keywordColor": {
-          "type": "string",
-          "default": "#FF5370",
-          "description": "Keyword color for Material HC Dark theme",
-          "pattern": "^#[0-9A-Fa-f]{6}$"
-        },
-        "vellumTheme.materialHC.stringColor": {
-          "type": "string",
-          "default": "#C3E88D",
-          "description": "String color for Material HC Dark theme",
-          "pattern": "^#[0-9A-Fa-f]{6}$"
-        },
-        "vellumTheme.materialHC.functionColor": {
-          "type": "string",
-          "default": "#82AAFF",
-          "description": "Function/method color for Material HC Dark theme",
           "pattern": "^#[0-9A-Fa-f]{6}$"
         },
         "vellumTheme.materialDefaultHC.accentColor": {
@@ -216,6 +201,126 @@
           "type": "string",
           "default": "#4527A0",
           "description": "Function/method color for Pink Blossom theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.nord.accentColor": {
+          "type": "string",
+          "default": "#88C0D0",
+          "description": "Accent color for Nord theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.nord.backgroundColor": {
+          "type": "string",
+          "default": "#2E3440",
+          "description": "Editor background color for Nord theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.nord.keywordColor": {
+          "type": "string",
+          "default": "#81A1C1",
+          "description": "Keyword color for Nord theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.nord.stringColor": {
+          "type": "string",
+          "default": "#A3BE8C",
+          "description": "String color for Nord theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.nord.functionColor": {
+          "type": "string",
+          "default": "#88C0D0",
+          "description": "Function/method color for Nord theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.oneDark.accentColor": {
+          "type": "string",
+          "default": "#528BFF",
+          "description": "Accent color for One Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.oneDark.backgroundColor": {
+          "type": "string",
+          "default": "#282C34",
+          "description": "Editor background color for One Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.oneDark.keywordColor": {
+          "type": "string",
+          "default": "#C678DD",
+          "description": "Keyword color for One Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.oneDark.stringColor": {
+          "type": "string",
+          "default": "#98C379",
+          "description": "String color for One Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.oneDark.functionColor": {
+          "type": "string",
+          "default": "#61AFEF",
+          "description": "Function/method color for One Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.dracula.accentColor": {
+          "type": "string",
+          "default": "#BD93F9",
+          "description": "Accent color for Dracula theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.dracula.backgroundColor": {
+          "type": "string",
+          "default": "#282A36",
+          "description": "Editor background color for Dracula theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.dracula.keywordColor": {
+          "type": "string",
+          "default": "#FF79C6",
+          "description": "Keyword color for Dracula theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.dracula.stringColor": {
+          "type": "string",
+          "default": "#F1FA8C",
+          "description": "String color for Dracula theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.dracula.functionColor": {
+          "type": "string",
+          "default": "#50FA7B",
+          "description": "Function/method color for Dracula theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.monokai.accentColor": {
+          "type": "string",
+          "default": "#A6E22E",
+          "description": "Accent color for Monokai theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.monokai.backgroundColor": {
+          "type": "string",
+          "default": "#272822",
+          "description": "Editor background color for Monokai theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.monokai.keywordColor": {
+          "type": "string",
+          "default": "#F92672",
+          "description": "Keyword color for Monokai theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.monokai.stringColor": {
+          "type": "string",
+          "default": "#E6DB74",
+          "description": "String color for Monokai theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.monokai.functionColor": {
+          "type": "string",
+          "default": "#A6E22E",
+          "description": "Function/method color for Monokai theme",
           "pattern": "^#[0-9A-Fa-f]{6}$"
         }
       }

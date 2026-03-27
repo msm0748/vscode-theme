@@ -23,10 +23,13 @@ interface ThemeInfo {
 
 const THEMES: ThemeInfo[] = [
   { label: "Ivory Light", configKey: "ivory", type: "light", defaultForeground: "#3C3C3C" },
-  { label: "Material HC Dark", configKey: "materialHC", type: "dark", defaultForeground: "#EEFFFF" },
   { label: "Material Default High Contrast", configKey: "materialDefaultHC", type: "dark", defaultForeground: "#EEFFFF" },
   { label: "Sky Light", configKey: "skyLight", type: "light", defaultForeground: "#2C3E50" },
   { label: "Pink Blossom", configKey: "pinkBlossom", type: "light", defaultForeground: "#3C2A33" },
+  { label: "Nord", configKey: "nord", type: "dark", defaultForeground: "#D8DEE9" },
+  { label: "One Dark", configKey: "oneDark", type: "dark", defaultForeground: "#ABB2BF" },
+  { label: "Dracula", configKey: "dracula", type: "dark", defaultForeground: "#F8F8F2" },
+  { label: "Monokai", configKey: "monokai", type: "dark", defaultForeground: "#F8F8F2" },
 ];
 
 const CUSTOMIZATION_OPTIONS: CustomizationOption[] = [
