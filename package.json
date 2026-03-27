@@ -1,0 +1,140 @@
+{
+  "name": "vellum-theme",
+  "displayName": "Vellum Theme",
+  "description": "Warm ivory parchment meets material high contrast dark. Two extremes, one identity.",
+  "version": "0.1.0",
+  "publisher": "seokmin",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seokmin/vellum-theme"
+  },
+  "license": "MIT",
+  "keywords": [
+    "theme",
+    "vellum",
+    "ivory",
+    "material",
+    "high contrast",
+    "dark",
+    "light",
+    "parchment"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Ivory Light",
+        "uiTheme": "vs",
+        "path": "./themes/ivory-light-color-theme.json"
+      },
+      {
+        "label": "Material HC Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/material-hc-dark-color-theme.json"
+      },
+      {
+        "label": "Material Default High Contrast",
+        "uiTheme": "vs-dark",
+        "path": "./themes/material-default-hc-color-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vellumTheme.customize",
+        "title": "Ivory Material Theme: Customize Colors"
+      },
+      {
+        "command": "vellumTheme.resetCustomizations",
+        "title": "Ivory Material Theme: Reset to Defaults"
+      }
+    ],
+    "configuration": {
+      "title": "Vellum Theme",
+      "properties": {
+        "vellumTheme.ivory.accentColor": {
+          "type": "string",
+          "default": "#8B7355",
+          "description": "Accent color for Ivory Light theme (used in status bar, badges, etc.)",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.ivory.backgroundColor": {
+          "type": "string",
+          "default": "#FDFAF3",
+          "description": "Editor background color for Ivory Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.ivory.keywordColor": {
+          "type": "string",
+          "default": "#7C3F00",
+          "description": "Keyword color for Ivory Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.ivory.stringColor": {
+          "type": "string",
+          "default": "#2D6A4F",
+          "description": "String color for Ivory Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.ivory.functionColor": {
+          "type": "string",
+          "default": "#1A5276",
+          "description": "Function/method color for Ivory Light theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialHC.accentColor": {
+          "type": "string",
+          "default": "#82AAFF",
+          "description": "Accent color for Material HC Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialHC.backgroundColor": {
+          "type": "string",
+          "default": "#000000",
+          "description": "Editor background color for Material HC Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialHC.keywordColor": {
+          "type": "string",
+          "default": "#FF5370",
+          "description": "Keyword color for Material HC Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialHC.stringColor": {
+          "type": "string",
+          "default": "#C3E88D",
+          "description": "String color for Material HC Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "vellumTheme.materialHC.functionColor": {
+          "type": "string",
+          "default": "#82AAFF",
+          "description": "Function/method color for Material HC Dark theme",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.24.0"
+  }
+}
