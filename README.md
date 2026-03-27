@@ -1,5 +1,7 @@
 # Vellum Theme
 
+[한국어](README.ko.md)
+
 A curated collection of 8 VS Code themes — from warm parchment lights to deep contrast darks — with live color customization.
 
 ---
@@ -30,13 +32,16 @@ A curated collection of 8 VS Code themes — from warm parchment lights to deep 
 
 ### From Marketplace
 
-1. VS Code Extensions 패널 (`Cmd+Shift+X`)에서 **Vellum Theme** 검색
-2. **Install** 클릭
+1. Open the Extensions panel (`Cmd+Shift+X` on Mac / `Ctrl+Shift+X` on Windows/Linux)
+2. Search for **Vellum Theme**
+3. Click **Install**
+
+Or install directly from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=msm0748.vellum-theme).
 
 ### From VSIX
 
 ```bash
-code --install-extension vellum-theme-0.1.0.vsix
+code --install-extension vellum-theme-0.1.1.vsix
 ```
 
 ### Build from Source
@@ -52,7 +57,7 @@ code --install-extension vellum-theme-*.vsix
 
 ## Applying a Theme
 
-`Cmd+K Cmd+T` (Mac) / `Ctrl+K Ctrl+T` (Windows/Linux) → 목록에서 선택:
+`Cmd+K Cmd+T` (Mac) / `Ctrl+K Ctrl+T` (Windows/Linux) → Select from the list:
 
 - Ivory Light
 - Sky Light
@@ -69,14 +74,14 @@ code --install-extension vellum-theme-*.vsix
 
 ### Command Palette
 
-1. `Cmd+Shift+P` → **Vellum Theme: Customize Colors**
-2. 변경할 항목 선택:
-   - **Accent Color** — 상태바, 배지, 버튼
-   - **Background Color** — 에디터 배경
-   - **Keyword Color** — `if`, `const`, `return` 등
-   - **String Color** — 문자열 리터럴
-   - **Function Color** — 함수/메서드 이름
-3. Hex 색상 코드 입력 (예: `#FF5370`)
+1. `Cmd+Shift+P` (Mac) / `Ctrl+Shift+P` (Windows/Linux) → **Vellum Theme: Customize Colors**
+2. Choose what to customize:
+   - **Accent Color** — Status bar, badges, buttons
+   - **Background Color** — Editor background
+   - **Keyword Color** — `if`, `const`, `return`, etc.
+   - **String Color** — String literals
+   - **Function Color** — Function/method names
+3. Enter a hex color code (e.g. `#FF5370`)
 
 ### settings.json
 
@@ -123,7 +128,7 @@ code --install-extension vellum-theme-*.vsix
 
 ### Reset
 
-`Cmd+Shift+P` → **Vellum Theme: Reset to Defaults**
+`Cmd+Shift+P` / `Ctrl+Shift+P` → **Vellum Theme: Reset to Defaults**
 
 ---
 
@@ -230,4 +235,6 @@ JavaScript, TypeScript, Python, Rust, Go, Java, C/C++, HTML, CSS, JSON, Markdown
 
 ## License
 
-MIT
+[MIT](LICENSE)
+
+The "Material Default High Contrast" theme is based on [Material Theme](https://github.com/material-theme/vsc-material-theme) by Mattia Astorino, licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
