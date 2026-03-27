@@ -145,7 +145,7 @@
         },
         "vellumTheme.skyLight.accentColor": {
           "type": "string",
-          "default": "#4A90D9",
+          "default": "#7BB5E8",
           "description": "Accent color for Sky Light theme",
           "pattern": "^#[0-9A-Fa-f]{6}$"
         },
@@ -175,7 +175,7 @@
         },
         "vellumTheme.pinkBlossom.accentColor": {
           "type": "string",
-          "default": "#D4618C",
+          "default": "#E08BAB",
           "description": "Accent color for Pink Blossom theme",
           "pattern": "^#[0-9A-Fa-f]{6}$"
         },
