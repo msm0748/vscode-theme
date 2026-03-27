@@ -10,21 +10,39 @@
 
 ### 라이트
 
-| 테마 | 스타일 |
-|------|--------|
-| **Ivory Light** | 따뜻한 아이보리 양피지 톤, 눈이 편안한 테마 |
-| **Sky Light** | 깔끔한 화이트 베이스에 시원한 스카이블루 포인트 |
-| **Pink Blossom** | 부드러운 로즈 포인트와 따뜻한 배경 |
+#### Ivory Light
+따뜻한 아이보리 양피지 톤, 눈이 편안한 테마.
+![Ivory Light](images/ivory-light.png)
+
+#### Sky Light
+깔끔한 화이트 베이스에 시원한 스카이블루 포인트.
+![Sky Light](images/sky-light.png)
+
+#### Pink Blossom
+부드러운 로즈 포인트와 따뜻한 배경.
+![Pink Blossom](images/pink-blossom.png)
 
 ### 다크
 
-| 테마 | 스타일 |
-|------|--------|
-| **Material Default High Contrast** | 머테리얼 디자인, 고대비 블랙 |
-| **Nord** | 북극풍 블루 톤 팔레트 |
-| **One Dark** | Atom 에디터 스타일의 균형 잡힌 다크 |
-| **Dracula** | 퍼플 포인트의 클래식 다크 |
-| **Monokai** | 어두운 배경 위의 생생한 구문 강조 |
+#### Material Default High Contrast
+머테리얼 디자인, 고대비 블랙.
+![Material Default High Contrast](images/material-Default-high-contrast.png)
+
+#### Nord
+북극풍 블루 톤 팔레트.
+![Nord](images/nord.png)
+
+#### One Dark
+Atom 에디터 스타일의 균형 잡힌 다크.
+![One Dark](images/one-dark.png)
+
+#### Dracula
+퍼플 포인트의 클래식 다크.
+![Dracula](images/dracula.png)
+
+#### Monokai
+어두운 배경 위의 생생한 구문 강조.
+![Monokai](images/monokai.png)
 
 ---
 

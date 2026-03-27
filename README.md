@@ -10,21 +10,39 @@ A curated collection of 8 VS Code themes — from warm parchment lights to deep 
 
 ### Light
 
-| Theme | Style |
-|-------|-------|
-| **Ivory Light** | Warm ivory parchment tones, easy on the eyes |
-| **Sky Light** | Cool sky-blue accents on a clean white base |
-| **Pink Blossom** | Soft rose accents with a gentle warm background |
+#### Ivory Light
+Warm ivory parchment tones, easy on the eyes.
+![Ivory Light](images/ivory-light.png)
+
+#### Sky Light
+Cool sky-blue accents on a clean white base.
+![Sky Light](images/sky-light.png)
+
+#### Pink Blossom
+Soft rose accents with a gentle warm background.
+![Pink Blossom](images/pink-blossom.png)
 
 ### Dark
 
-| Theme | Style |
-|-------|-------|
-| **Material Default High Contrast** | Material Design, high contrast black |
-| **Nord** | Arctic, blue-tinted palette |
-| **One Dark** | Atom-inspired balanced dark |
-| **Dracula** | Purple-accented dark classic |
-| **Monokai** | Vibrant syntax on dark background |
+#### Material Default High Contrast
+Material Design, high contrast black.
+![Material Default High Contrast](images/material-Default-high-contrast.png)
+
+#### Nord
+Arctic, blue-tinted palette.
+![Nord](images/nord.png)
+
+#### One Dark
+Atom-inspired balanced dark.
+![One Dark](images/one-dark.png)
+
+#### Dracula
+Purple-accented dark classic.
+![Dracula](images/dracula.png)
+
+#### Monokai
+Vibrant syntax on dark background.
+![Monokai](images/monokai.png)
 
 ---
 
