@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-따뜻한 양피지 느낌의 라이트 테마부터 깊은 대비의 다크 테마까지, 실시간 색상 커스터마이징을 지원하는 8가지 VS Code 테마 컬렉션입니다.
+따뜻한 양피지 느낌의 라이트 테마부터 깊은 대비의 다크 테마까지, 실시간 색상 커스터마이징을 지원하는 11가지 VS Code 테마 컬렉션입니다.
 
 ---
 
@@ -11,38 +11,58 @@
 ### 라이트
 
 #### Ivory Light
+
 따뜻한 아이보리 양피지 톤, 눈이 편안한 테마.
-![Ivory Light](images/ivory-light.png)
+![Ivory Light](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/ivory-light.png)
+
+#### Ivory Light — Dark Terminal
+
+Ivory Light와 동일하지만 터미널 패널이 어두운 웜브라운으로 설정되어 터미널 UI 요소의 가시성이 향상됩니다.
 
 #### Sky Light
+
 깔끔한 화이트 베이스에 시원한 스카이블루 포인트.
-![Sky Light](images/sky-light.png)
+![Sky Light](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/sky-light.png)
+
+#### Sky Light — Dark Terminal
+
+Sky Light와 동일하지만 터미널 패널이 어두운 블루그레이로 설정되어 터미널 UI 요소의 가시성이 향상됩니다.
 
 #### Pink Blossom
+
 부드러운 로즈 포인트와 따뜻한 배경.
-![Pink Blossom](images/pink-blossom.png)
+![Pink Blossom](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/pink-blossom.png)
+
+#### Pink Blossom — Dark Terminal
+
+Pink Blossom과 동일하지만 터미널 패널이 어두운 웜다크로 설정되어 터미널 UI 요소의 가시성이 향상됩니다.
 
 ### 다크
 
 #### Material Default High Contrast
+
 머테리얼 디자인, 고대비 블랙.
-![Material Default High Contrast](images/material-Default-high-contrast.png)
+![Material Default High Contrast](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/material-Default-high-contrast.png)
 
 #### Nord
+
 북극풍 블루 톤 팔레트.
-![Nord](images/nord.png)
+![Nord](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/nord.png)
 
 #### One Dark
+
 Atom 에디터 스타일의 균형 잡힌 다크.
-![One Dark](images/one-dark.png)
+![One Dark](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/one-dark.png)
 
 #### Dracula
+
 퍼플 포인트의 클래식 다크.
-![Dracula](images/dracula.png)
+![Dracula](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/dracula.png)
 
 #### Monokai
+
 어두운 배경 위의 생생한 구문 강조.
-![Monokai](images/monokai.png)
+![Monokai](https://raw.githubusercontent.com/msm0748/vscode-theme/refs/heads/main/images/monokai.png)
 
 ---
 
@@ -78,8 +98,11 @@ code --install-extension vellum-theme-*.vsix
 `Cmd+K Cmd+T` (Mac) / `Ctrl+K Ctrl+T` (Windows/Linux) → 목록에서 선택:
 
 - Ivory Light
+- Ivory Light — Dark Terminal
 - Sky Light
+- Sky Light — Dark Terminal
 - Pink Blossom
+- Pink Blossom — Dark Terminal
 - Material Default High Contrast
 - Nord
 - One Dark
@@ -117,7 +140,7 @@ code --install-extension vellum-theme-*.vsix
   "vellumTheme.pinkBlossom.backgroundColor": "#FDF5F7",
   "vellumTheme.pinkBlossom.keywordColor": "#AD1457",
   "vellumTheme.pinkBlossom.stringColor": "#2E7D32",
-  "vellumTheme.pinkBlossom.functionColor": "#4527A0"
+  "vellumTheme.pinkBlossom.functionColor": "#4527A0",
 }
 ```
 
@@ -128,19 +151,19 @@ code --install-extension vellum-theme-*.vsix
   "workbench.colorCustomizations": {
     "[Sky Light]": {
       "editor.background": "#F0F5FF",
-      "statusBar.background": "#5B99E6"
-    }
+      "statusBar.background": "#5B99E6",
+    },
   },
   "editor.tokenColorCustomizations": {
     "[Pink Blossom]": {
       "textMateRules": [
         {
           "scope": ["variable.parameter"],
-          "settings": { "foreground": "#9C3B6B", "fontStyle": "italic" }
-        }
-      ]
-    }
-  }
+          "settings": { "foreground": "#9C3B6B", "fontStyle": "italic" },
+        },
+      ],
+    },
+  },
 }
 ```
 
@@ -154,83 +177,83 @@ code --install-extension vellum-theme-*.vsix
 
 ### Ivory Light
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.ivory.accentColor` | `#8B7355` | 포인트 색상 |
-| `vellumTheme.ivory.backgroundColor` | `#FDFAF3` | 배경색 |
-| `vellumTheme.ivory.keywordColor` | `#7C3F00` | 키워드 색상 |
-| `vellumTheme.ivory.stringColor` | `#2D6A4F` | 문자열 색상 |
-| `vellumTheme.ivory.functionColor` | `#1A5276` | 함수 색상 |
+| 키                                  | 기본값    | 설명        |
+| ----------------------------------- | --------- | ----------- |
+| `vellumTheme.ivory.accentColor`     | `#8B7355` | 포인트 색상 |
+| `vellumTheme.ivory.backgroundColor` | `#FDFAF3` | 배경색      |
+| `vellumTheme.ivory.keywordColor`    | `#7C3F00` | 키워드 색상 |
+| `vellumTheme.ivory.stringColor`     | `#2D6A4F` | 문자열 색상 |
+| `vellumTheme.ivory.functionColor`   | `#1A5276` | 함수 색상   |
 
 ### Sky Light
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.skyLight.accentColor` | `#7BB5E8` | 포인트 색상 |
-| `vellumTheme.skyLight.backgroundColor` | `#F5F9FD` | 배경색 |
-| `vellumTheme.skyLight.keywordColor` | `#1565C0` | 키워드 색상 |
-| `vellumTheme.skyLight.stringColor` | `#2E7D32` | 문자열 색상 |
-| `vellumTheme.skyLight.functionColor` | `#6A1B9A` | 함수 색상 |
+| 키                                     | 기본값    | 설명        |
+| -------------------------------------- | --------- | ----------- |
+| `vellumTheme.skyLight.accentColor`     | `#7BB5E8` | 포인트 색상 |
+| `vellumTheme.skyLight.backgroundColor` | `#F5F9FD` | 배경색      |
+| `vellumTheme.skyLight.keywordColor`    | `#1565C0` | 키워드 색상 |
+| `vellumTheme.skyLight.stringColor`     | `#2E7D32` | 문자열 색상 |
+| `vellumTheme.skyLight.functionColor`   | `#6A1B9A` | 함수 색상   |
 
 ### Pink Blossom
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.pinkBlossom.accentColor` | `#E08BAB` | 포인트 색상 |
-| `vellumTheme.pinkBlossom.backgroundColor` | `#FDF5F7` | 배경색 |
-| `vellumTheme.pinkBlossom.keywordColor` | `#AD1457` | 키워드 색상 |
-| `vellumTheme.pinkBlossom.stringColor` | `#2E7D32` | 문자열 색상 |
-| `vellumTheme.pinkBlossom.functionColor` | `#4527A0` | 함수 색상 |
+| 키                                        | 기본값    | 설명        |
+| ----------------------------------------- | --------- | ----------- |
+| `vellumTheme.pinkBlossom.accentColor`     | `#E08BAB` | 포인트 색상 |
+| `vellumTheme.pinkBlossom.backgroundColor` | `#FDF5F7` | 배경색      |
+| `vellumTheme.pinkBlossom.keywordColor`    | `#AD1457` | 키워드 색상 |
+| `vellumTheme.pinkBlossom.stringColor`     | `#2E7D32` | 문자열 색상 |
+| `vellumTheme.pinkBlossom.functionColor`   | `#4527A0` | 함수 색상   |
 
 ### Material Default High Contrast
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.materialDefaultHC.accentColor` | `#82AAFF` | 포인트 색상 |
-| `vellumTheme.materialDefaultHC.backgroundColor` | `#000000` | 배경색 |
-| `vellumTheme.materialDefaultHC.keywordColor` | `#FF5370` | 키워드 색상 |
-| `vellumTheme.materialDefaultHC.stringColor` | `#C3E88D` | 문자열 색상 |
-| `vellumTheme.materialDefaultHC.functionColor` | `#82AAFF` | 함수 색상 |
+| 키                                              | 기본값    | 설명        |
+| ----------------------------------------------- | --------- | ----------- |
+| `vellumTheme.materialDefaultHC.accentColor`     | `#82AAFF` | 포인트 색상 |
+| `vellumTheme.materialDefaultHC.backgroundColor` | `#000000` | 배경색      |
+| `vellumTheme.materialDefaultHC.keywordColor`    | `#FF5370` | 키워드 색상 |
+| `vellumTheme.materialDefaultHC.stringColor`     | `#C3E88D` | 문자열 색상 |
+| `vellumTheme.materialDefaultHC.functionColor`   | `#82AAFF` | 함수 색상   |
 
 ### Nord
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.nord.accentColor` | `#88C0D0` | 포인트 색상 |
-| `vellumTheme.nord.backgroundColor` | `#2E3440` | 배경색 |
-| `vellumTheme.nord.keywordColor` | `#81A1C1` | 키워드 색상 |
-| `vellumTheme.nord.stringColor` | `#A3BE8C` | 문자열 색상 |
-| `vellumTheme.nord.functionColor` | `#88C0D0` | 함수 색상 |
+| 키                                 | 기본값    | 설명        |
+| ---------------------------------- | --------- | ----------- |
+| `vellumTheme.nord.accentColor`     | `#88C0D0` | 포인트 색상 |
+| `vellumTheme.nord.backgroundColor` | `#2E3440` | 배경색      |
+| `vellumTheme.nord.keywordColor`    | `#81A1C1` | 키워드 색상 |
+| `vellumTheme.nord.stringColor`     | `#A3BE8C` | 문자열 색상 |
+| `vellumTheme.nord.functionColor`   | `#88C0D0` | 함수 색상   |
 
 ### One Dark
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.oneDark.accentColor` | `#61AFEF` | 포인트 색상 |
-| `vellumTheme.oneDark.backgroundColor` | `#282C34` | 배경색 |
-| `vellumTheme.oneDark.keywordColor` | `#C678DD` | 키워드 색상 |
-| `vellumTheme.oneDark.stringColor` | `#98C379` | 문자열 색상 |
-| `vellumTheme.oneDark.functionColor` | `#61AFEF` | 함수 색상 |
+| 키                                    | 기본값    | 설명        |
+| ------------------------------------- | --------- | ----------- |
+| `vellumTheme.oneDark.accentColor`     | `#61AFEF` | 포인트 색상 |
+| `vellumTheme.oneDark.backgroundColor` | `#282C34` | 배경색      |
+| `vellumTheme.oneDark.keywordColor`    | `#C678DD` | 키워드 색상 |
+| `vellumTheme.oneDark.stringColor`     | `#98C379` | 문자열 색상 |
+| `vellumTheme.oneDark.functionColor`   | `#61AFEF` | 함수 색상   |
 
 ### Dracula
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.dracula.accentColor` | `#BD93F9` | 포인트 색상 |
-| `vellumTheme.dracula.backgroundColor` | `#282A36` | 배경색 |
-| `vellumTheme.dracula.keywordColor` | `#FF79C6` | 키워드 색상 |
-| `vellumTheme.dracula.stringColor` | `#F1FA8C` | 문자열 색상 |
-| `vellumTheme.dracula.functionColor` | `#50FA7B` | 함수 색상 |
+| 키                                    | 기본값    | 설명        |
+| ------------------------------------- | --------- | ----------- |
+| `vellumTheme.dracula.accentColor`     | `#BD93F9` | 포인트 색상 |
+| `vellumTheme.dracula.backgroundColor` | `#282A36` | 배경색      |
+| `vellumTheme.dracula.keywordColor`    | `#FF79C6` | 키워드 색상 |
+| `vellumTheme.dracula.stringColor`     | `#F1FA8C` | 문자열 색상 |
+| `vellumTheme.dracula.functionColor`   | `#50FA7B` | 함수 색상   |
 
 ### Monokai
 
-| 키 | 기본값 | 설명 |
-|----|--------|------|
-| `vellumTheme.monokai.accentColor` | `#F92672` | 포인트 색상 |
-| `vellumTheme.monokai.backgroundColor` | `#272822` | 배경색 |
-| `vellumTheme.monokai.keywordColor` | `#F92672` | 키워드 색상 |
-| `vellumTheme.monokai.stringColor` | `#E6DB74` | 문자열 색상 |
-| `vellumTheme.monokai.functionColor` | `#A6E22E` | 함수 색상 |
+| 키                                    | 기본값    | 설명        |
+| ------------------------------------- | --------- | ----------- |
+| `vellumTheme.monokai.accentColor`     | `#F92672` | 포인트 색상 |
+| `vellumTheme.monokai.backgroundColor` | `#272822` | 배경색      |
+| `vellumTheme.monokai.keywordColor`    | `#F92672` | 키워드 색상 |
+| `vellumTheme.monokai.stringColor`     | `#E6DB74` | 문자열 색상 |
+| `vellumTheme.monokai.functionColor`   | `#A6E22E` | 함수 색상   |
 
 ---
 
