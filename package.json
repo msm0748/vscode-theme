@@ -2,7 +2,7 @@
   "name": "vellum-theme",
   "displayName": "Vellum Theme",
   "description": "Warm ivory parchment meets material high contrast dark. Two extremes, one identity.",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "publisher": "msm0748",
   "engines": {
     "vscode": "^1.85.0"
@@ -36,6 +36,11 @@
         "path": "./themes/ivory-light-color-theme.json"
       },
       {
+        "label": "Ivory Light — Dark Terminal",
+        "uiTheme": "vs",
+        "path": "./themes/ivory-light-dark-terminal-color-theme.json"
+      },
+      {
         "label": "Material Default High Contrast",
         "uiTheme": "vs-dark",
         "path": "./themes/material-default-hc-color-theme.json"
@@ -46,9 +51,19 @@
         "path": "./themes/sky-light-color-theme.json"
       },
       {
+        "label": "Sky Light — Dark Terminal",
+        "uiTheme": "vs",
+        "path": "./themes/sky-light-dark-terminal-color-theme.json"
+      },
+      {
         "label": "Pink Blossom",
         "uiTheme": "vs",
         "path": "./themes/pink-blossom-color-theme.json"
+      },
+      {
+        "label": "Pink Blossom — Dark Terminal",
+        "uiTheme": "vs",
+        "path": "./themes/pink-blossom-dark-terminal-color-theme.json"
       },
       {
         "label": "Nord",

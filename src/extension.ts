@@ -23,9 +23,12 @@ interface ThemeInfo {
 
 const THEMES: ThemeInfo[] = [
   { label: "Ivory Light", configKey: "ivory", type: "light", defaultForeground: "#3C3C3C" },
+  { label: "Ivory Light — Dark Terminal", configKey: "ivoryDarkTerminal", type: "light", defaultForeground: "#3C3C3C" },
   { label: "Material Default High Contrast", configKey: "materialDefaultHC", type: "dark", defaultForeground: "#EEFFFF" },
   { label: "Sky Light", configKey: "skyLight", type: "light", defaultForeground: "#2C3E50" },
+  { label: "Sky Light — Dark Terminal", configKey: "skyLightDarkTerminal", type: "light", defaultForeground: "#191B20" },
   { label: "Pink Blossom", configKey: "pinkBlossom", type: "light", defaultForeground: "#3C2A33" },
+  { label: "Pink Blossom — Dark Terminal", configKey: "pinkBlossomDarkTerminal", type: "light", defaultForeground: "#1E1A1C" },
   { label: "Nord", configKey: "nord", type: "dark", defaultForeground: "#D8DEE9" },
   { label: "One Dark", configKey: "oneDark", type: "dark", defaultForeground: "#ABB2BF" },
   { label: "Dracula", configKey: "dracula", type: "dark", defaultForeground: "#F8F8F2" },
